@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+begin
+  require 'pry-byebug'
+rescue LoadError
+  nil
+end
+
 require_relative 'svejk/container'
 
 Svejk::Container.finalize!
