@@ -42,6 +42,10 @@ namespace :db do
     Svejk::Container.start :settings
   end
 
+  task console: :settings do
+    system("psql #{Shellwords.escape(database_uri)}")
+  end
+
   desc "Print current database schema version"
   task version: :setup do
     version =
