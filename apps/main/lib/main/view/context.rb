@@ -1,4 +1,6 @@
-require "svejk/view/context"
+# frozen_string_literal: true
+
+require 'svejk/view/context'
 
 module Main
   module View

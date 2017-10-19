@@ -1,0 +1,20 @@
+AllCops:
+  UseCache: false
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  TargetRubyVersion: 2.4
+
+Metrics/BlockLength:
+  Exclude:
+    - Rakefile
+
+Style/Documentation:
+  Enabled: false
+
+Style/FileName:
+  Exclude:
+    - Rakefile
+
+Style/LambdaCall:
+  Enabled: false

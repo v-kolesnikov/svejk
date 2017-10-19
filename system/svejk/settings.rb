@@ -1,5 +1,7 @@
-require "dry/web/settings"
-require "types"
+# frozen_string_literal: true
+
+require 'dry/web/settings'
+require 'types'
 
 module Svejk
   class Settings < Dry::Web::Settings

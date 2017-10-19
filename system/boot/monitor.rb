@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Svejk::Container.finalize :monitor do |_container|
   init do
-    require "dry/monitor"
+    require 'dry/monitor'
   end
 
   start do

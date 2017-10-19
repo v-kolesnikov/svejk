@@ -1,9 +1,12 @@
-Svejk::Container.namespace "persistence" do |container|
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/BlockLength
+Svejk::Container.namespace 'persistence' do |container|
   container.finalize :rom do
     init do
-      require "sequel"
-      require "rom"
-      require "rom/sql"
+      require 'sequel'
+      require 'rom'
+      require 'rom/sql'
 
       use :settings
       use :monitor
@@ -15,8 +18,8 @@ Svejk::Container.namespace "persistence" do |container|
 
       rom_config = ROM::Configuration.new(
         :sql,
-        container["settings"].database_url,
-        extensions: %i[error_sql pg_array pg_json],
+        container['settings'].database_url,
+        extensions: %i[error_sql pg_array pg_json]
       )
 
       rom_config.plugin :sql, relations: :instrumentation do |plugin_config|
@@ -25,15 +28,15 @@ Svejk::Container.namespace "persistence" do |container|
 
       rom_config.plugin :sql, relations: :auto_restrictions
 
-      container.register "config", rom_config
-      container.register "db", rom_config.gateways[:default].connection
+      container.register 'config', rom_config
+      container.register 'db', rom_config.gateways[:default].connection
     end
 
     start do
-      config = container["persistence.config"]
-      config.auto_registration container.root.join("lib/persistence")
+      config = container['persistence.config']
+      config.auto_registration container.root.join('lib/persistence')
 
-      container.register "rom", ROM.container(config)
+      container.register 'rom', ROM.container(config)
     end
   end
 end
