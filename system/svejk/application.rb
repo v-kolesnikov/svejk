@@ -12,7 +12,7 @@ module Svejk
     use Rollbar::Middleware::Rack
 
     route do |r|
-      r.run ::Main::Application.freeze.app
+      r.run ::Api::Application.freeze.app
     end
 
     error do |e|

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'wh/repository'
+require 'svejk/repository'
 
-module Main
+module Api
   module Persistence
     module Repositories
       class Webhooks < Svejk::Repository[:webhooks]
