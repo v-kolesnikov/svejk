@@ -1,6 +1,6 @@
 require_relative "spec_helper"
 
-Swejk::Container.boot! :rom
+Swejk::Container.start :rom
 
 Dir[SPEC_ROOT.join("support/db/*.rb").to_s].each(&method(:require))
 Dir[SPEC_ROOT.join("shared/db/*.rb").to_s].each(&method(:require))
