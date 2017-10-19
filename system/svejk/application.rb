@@ -9,6 +9,8 @@ module Svejk
       config.container = Container
     end
 
+    use Rollbar::Middleware::Rack
+
     route do |r|
       r.run ::Main::Application.freeze.app
     end

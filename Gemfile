@@ -29,6 +29,8 @@ gem 'dry-validation'
 gem 'dry-view', '>= 0.3.0'
 gem 'slim'
 
+gem 'rollbar'
+
 group :development, :test do
   gem 'pry-byebug', platform: :mri
   gem 'rubocop'
