@@ -1,0 +1,18 @@
+language: ruby
+
+dist: trusty
+
+addons:
+  postgresql: "10.0"
+
+services:
+  - postgresql
+
+cache:
+  bundler: true
+
+rvm:
+  - 2.4.2
+
+script:
+  - bundle exec rubocop
