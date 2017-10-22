@@ -36,6 +36,16 @@ def postgres_env_vars(uri)
   end
 end
 
+namespace :worker do
+  task :setup do
+    require_relative 'apps/worker/system/boot'
+  end
+
+  task run: :setup do
+    Worker::Application.new.run
+  end
+end
+
 namespace :db do
   task :setup do
     Svejk::Container.start :rom

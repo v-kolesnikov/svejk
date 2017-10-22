@@ -31,6 +31,8 @@ gem 'dry-transaction', '>= 0.10.0'
 gem 'dry-types'
 gem 'dry-validation'
 gem 'dry-view', '>= 0.3.0'
+gem 'faraday'
+gem 'que'
 gem 'slim'
 
 gem 'rollbar'

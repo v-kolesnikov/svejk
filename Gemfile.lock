@@ -104,6 +104,8 @@ GEM
       thor (~> 0.19)
     faker (1.8.4)
       i18n (~> 0.5)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     i18n (0.9.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -114,6 +116,7 @@ GEM
     mini_mime (0.1.4)
     mini_portile2 (2.3.0)
     multi_json (1.12.2)
+    multipart-post (2.0.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.0)
@@ -133,6 +136,7 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.0)
     puma (3.10.0)
+    que (0.13.0)
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
@@ -233,10 +237,12 @@ DEPENDENCIES
   dry-view (>= 0.3.0)
   dry-web (>= 0.7.0)
   dry-web-roda (>= 0.6.0)
+  faraday
   pg
   poltergeist
   pry-byebug
   puma
+  que
   rack (>= 2.0)
   rack_csrf
   rake
