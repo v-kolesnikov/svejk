@@ -3,7 +3,7 @@ language: ruby
 dist: trusty
 
 addons:
-  postgresql: "10.0"
+  postgresql: "9.6"
 
 services:
   - postgresql
@@ -14,5 +14,13 @@ cache:
 rvm:
   - 2.4.2
 
-script:
-  - bundle exec rubocop
+jobs:
+  include:
+    - stage: code quality
+      script: bundle exec rubocop
+
+    - stage: unit test
+      before_script:
+        - cp .env.ci .env
+        - bundle exec rake db:create
+        - bundle exec rake db:migrate
