@@ -2,6 +2,10 @@
 
 source 'https://rubygems.org'
 
+git_source(:github) do |repo_name|
+  "https://github.com/#{repo_name}"
+end
+
 gem 'rake'
 
 # Web framework
@@ -41,6 +45,6 @@ group :test do
   gem 'capybara-screenshot'
   gem 'database_cleaner'
   gem 'poltergeist'
-  gem 'rom-factory'
+  gem 'rom-factory', github: 'rom-rb/rom-factory'
   gem 'rspec'
 end

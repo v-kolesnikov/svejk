@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/rom-rb/rom-factory
+  revision: 5dc57051f7ef4e98ef08e6366cfe915e96e87850
+  specs:
+    rom-factory (0.4.0)
+      dry-configurable (~> 0.1)
+      dry-core (~> 0.3, >= 0.3.1)
+      dry-struct (~> 0.2)
+      faker (~> 1.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -136,16 +146,16 @@ GEM
     roda-flow (0.3.1)
     rollbar (2.15.4)
       multi_json
-    rom (4.0.0)
+    rom (4.0.1)
       rom-changeset (~> 1.0)
-      rom-core (~> 4.0)
-      rom-mapper (~> 1.0)
+      rom-core (~> 4.0, >= 4.0.1)
+      rom-mapper (~> 1.0, >= 1.0.1)
       rom-repository (~> 2.0)
     rom-changeset (1.0.0)
       dry-core (~> 0.3, >= 0.3.1)
       rom-core (~> 4.0.0.rc)
       transproc (~> 1.0)
-    rom-core (4.0.0)
+    rom-core (4.0.1)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.6)
       dry-core (~> 0.3)
@@ -153,12 +163,7 @@ GEM
       dry-initializer (~> 2.0)
       dry-types (~> 0.12, >= 0.12.1)
       rom-mapper (~> 1.0)
-    rom-factory (0.4.0)
-      dry-configurable (~> 0.1)
-      dry-core (~> 0.2)
-      dry-struct (~> 0.2)
-      faker (~> 1.7)
-    rom-mapper (1.0.0)
+    rom-mapper (1.0.1)
       dry-core (~> 0.3, >= 0.3.1)
       dry-equalizer (~> 0.2)
       transproc (~> 1.0)
@@ -237,7 +242,7 @@ DEPENDENCIES
   rake
   rollbar
   rom (~> 4.0)
-  rom-factory
+  rom-factory!
   rom-sql (~> 2.0)
   rspec
   rubocop
