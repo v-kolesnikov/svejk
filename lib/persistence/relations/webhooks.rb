@@ -12,8 +12,14 @@ module Persistence
         attribute :events, Types::PG::Array('text')
       end
 
-        attribute :created_at, Types::Strict::Time.optional
-        attribute :updated_at, Types::Strict::Time.optional
+      view :subscribed_to do
+        schema do
+          new([relations[:webhooks][:id].qualified])
+        end
+
+        relation do |event_scope|
+          webhooks.where { events.contain(event_scope) }
+        end
       end
     end
   end
