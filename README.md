@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/v-kolesnikov/svejk.svg?branch=master)](https://travis-ci.org/v-kolesnikov/svejk)
+
 # Svejk
 
 Welcome! You’ve generated an app using dry-web-roda.
