@@ -47,6 +47,6 @@ group :test do
   gem 'capybara-screenshot'
   gem 'database_cleaner'
   gem 'poltergeist'
-  gem 'rom-factory', github: 'rom-rb/rom-factory'
+  gem 'rom-factory', '~> 0.5.0'
   gem 'rspec'
 end

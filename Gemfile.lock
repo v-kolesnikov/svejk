@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/rom-rb/rom-factory
-  revision: 5dc57051f7ef4e98ef08e6366cfe915e96e87850
-  specs:
-    rom-factory (0.4.0)
-      dry-configurable (~> 0.1)
-      dry-core (~> 0.3, >= 0.3.1)
-      dry-struct (~> 0.2)
-      faker (~> 1.7)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -167,6 +157,12 @@ GEM
       dry-initializer (~> 2.0)
       dry-types (~> 0.12, >= 0.12.1)
       rom-mapper (~> 1.0)
+    rom-factory (0.5.0)
+      dry-configurable (~> 0.7)
+      dry-core (~> 0.3, >= 0.3.1)
+      dry-struct (~> 0.3)
+      faker (~> 1.7)
+      rom-core (~> 4.0)
     rom-mapper (1.0.1)
       dry-core (~> 0.3, >= 0.3.1)
       dry-equalizer (~> 0.2)
@@ -248,7 +244,7 @@ DEPENDENCIES
   rake
   rollbar
   rom (~> 4.0)
-  rom-factory!
+  rom-factory (~> 0.5.0)
   rom-sql (~> 2.0)
   rspec
   rubocop
