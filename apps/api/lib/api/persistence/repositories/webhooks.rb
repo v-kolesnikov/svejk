@@ -8,8 +8,14 @@ module Api
       class Webhooks < Svejk::Repository[:webhooks]
         commands :create, update: :by_pk, delete: :by_pk
 
-        def listing
-          webhooks.to_a
+        def listing(events: [], filter_by: {}, **options)
+          webhooks
+            .filter(filter_by)
+            .starting_after(options[:starting_after])
+            .ending_before(options[:ending_before])
+            .subscribed_to(events)
+            .limit(options[:limit])
+            .to_a
         end
 
         def retrieve(id)
