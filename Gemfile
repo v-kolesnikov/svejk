@@ -40,6 +40,7 @@ gem 'rollbar'
 group :development, :test do
   gem 'pry-byebug', platform: :mri
   gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 
 group :test do

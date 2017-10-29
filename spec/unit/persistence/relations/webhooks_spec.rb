@@ -3,7 +3,7 @@
 require 'spec_helper'
 require 'db_spec_helper'
 
-RSpec.describe 'webhooks' do
+RSpec.describe Persistence::Relations::Webhooks do
   before do
     Factory[:webhook, events: %w[issue.opened]]
     Factory[:webhook, events: %w[issue.opened issue.updated]]

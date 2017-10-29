@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 AllCops:
   UseCache: false
   DisplayCopNames: true
@@ -8,6 +10,7 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - Rakefile
+    - spec/**/*.rb
 
 Style/Documentation:
   Enabled: false
