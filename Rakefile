@@ -42,6 +42,7 @@ namespace :worker do
   end
 
   task run: :setup do
+    Worker::Application.configure
     Worker::Application.new.run
   end
 end
