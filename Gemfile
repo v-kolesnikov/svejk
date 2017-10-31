@@ -47,6 +47,7 @@ group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'database_cleaner'
+  gem 'dredd_hooks'
   gem 'poltergeist'
   gem 'rom-factory', '~> 0.5.0'
   gem 'rspec'

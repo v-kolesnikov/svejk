@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "api_spec": "dredd"
+  },
+  "devDependencies": {
+    "dredd": "^4.6.1"
+  }
+}

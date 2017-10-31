@@ -10,17 +10,28 @@ services:
 
 cache:
   bundler: true
+  yarn: true
 
 rvm:
   - 2.4.2
 
 jobs:
   include:
-    - stage: code quality
+    - stage: code quality checks
       script: bundle exec rubocop
 
-    - stage: unit test
+    - stage: unit tests
       before_script:
         - cp .env.ci .env
         - bundle exec rake db:create
         - bundle exec rake db:migrate
+
+    - stage: api tests
+      before_install:
+        - yarn install
+      before_script:
+        - cp .env.ci .env
+        - bundle exec rake db:create
+        - bundle exec rake db:migrate
+        - bundle exec rake db:seed
+      script: yarn api_spec
