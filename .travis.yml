@@ -25,6 +25,8 @@ jobs:
         - cp .env.ci .env
         - bundle exec rake db:create
         - bundle exec rake db:migrate
+      after_success:
+        - '[ -d coverage ] && bundle exec codeclimate-test-reporter'
 
     - stage: api tests
       before_install:

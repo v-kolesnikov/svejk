@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-ENV['RACK_ENV'] = 'test'
-
 require 'pry-byebug'
+require 'simplecov' if ENV['COVERAGE']
+
+ENV['RACK_ENV'] = 'test'
 
 SPEC_ROOT = Pathname(__FILE__).dirname
 

@@ -10,3 +10,5 @@
 
 # Temp files
 tmp/*
+
+/coverage

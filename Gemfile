@@ -41,11 +41,13 @@ group :development, :test do
   gem 'pry-byebug', platform: :mri
   gem 'rubocop'
   gem 'rubocop-rspec'
+  gem 'simplecov', require: false
 end
 
 group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
+  gem 'codeclimate-test-reporter'
   gem 'database_cleaner'
   gem 'dredd_hooks'
   gem 'poltergeist'
