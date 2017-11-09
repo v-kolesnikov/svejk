@@ -2,6 +2,7 @@
 
 require 'pry-byebug'
 require 'simplecov' if ENV['COVERAGE']
+require 'webmock/rspec'
 
 ENV['RACK_ENV'] = 'test'
 
@@ -11,6 +12,7 @@ Dir[SPEC_ROOT.join('support/*.rb').to_s].each(&method(:require))
 Dir[SPEC_ROOT.join('shared/*.rb').to_s].each(&method(:require))
 
 require SPEC_ROOT.join('../system/svejk/container')
+Svejk::Container.finalize!
 
 RSpec.configure do |config|
   config.disable_monkey_patching!
