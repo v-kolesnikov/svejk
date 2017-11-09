@@ -35,6 +35,20 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: deliveries; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE deliveries (
+    id uuid NOT NULL,
+    webhook_id integer NOT NULL,
+    request jsonb DEFAULT '{}'::jsonb NOT NULL,
+    response jsonb,
+    created_at timestamp without time zone NOT NULL,
+    delivered_at timestamp without time zone
+);
+
+
+--
 -- Name: que_jobs; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -135,6 +149,14 @@ ALTER TABLE ONLY webhooks ALTER COLUMN id SET DEFAULT nextval('webhooks_id_seq':
 
 
 --
+-- Name: deliveries deliveries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY deliveries
+    ADD CONSTRAINT deliveries_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: que_jobs que_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -156,6 +178,14 @@ ALTER TABLE ONLY schema_migrations
 
 ALTER TABLE ONLY webhooks
     ADD CONSTRAINT webhooks_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: deliveries deliveries_webhook_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY deliveries
+    ADD CONSTRAINT deliveries_webhook_id_fkey FOREIGN KEY (webhook_id) REFERENCES webhooks(id);
 
 
 --

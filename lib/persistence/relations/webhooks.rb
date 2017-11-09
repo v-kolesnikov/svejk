@@ -4,6 +4,10 @@ module Persistence
   module Relations
     class Webhooks < ROM::Relation[:sql]
       schema(:webhooks) do
+        associations do
+          has_many :deliveries
+        end
+
         attribute :id, Types::Serial
 
         attribute :name, Types::Strict::String
