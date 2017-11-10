@@ -1,0 +1,48 @@
+FORMAT: 1A
+HOST: http://api.svjek.io/
+
+# Svejk
+
+The Svejk API is organized around REST. Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. JSON is returned by all API responses, including errors.
+
+# Group Webhooks
+
+## Webhooks [/webhooks]
+
+### List Webhooks [GET]
+
++ Response 200 (application/json)
+    + Attributes (array[Webhook])
+
+### Retrieve a Webhook [GET /webhooks/{id}]
+
++ Parameters
+    + id (int, `1`)
+        ID of webhook to retrieve
+
++ Response 200 (application/json)
+    + Attributes (Webhook)
+
++ Response 404 (application/json)
+
+### Create a New Webhook [POST]
+
++ Request (application/json)
+    + Attributes
+        + name: Slack notification (required)
+        + url: http://api.slack.io/hooks (required)
+        + events: entity.created, entity.updated (array, required)
+        + secret_key: 4a65ab3f217aca41fca718724a752ebe (optional)
+
++ Response 200 (application/json)
+    + Attributes (Webhook)
+
+# Data structures
+
+## Resource (object)
+## Collection (object)
+
+## Webhook (Resource)
++ name: test_webhook
++ url: https://example.com/hooks
++ events: events.created, events.updated

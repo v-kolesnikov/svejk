@@ -12,14 +12,24 @@ module Persistence
         attribute :events, Types::PG::Array('text')
       end
 
-      view :subscribed_to do
-        schema do
-          new([relations[:webhooks][:id].qualified])
+      def starting_after(value)
+        value ? where { id > value } : self
+      end
+
+      def ending_before(value)
+        value ? where { id < value } : self
+      end
+
+      def subscribed_to(events)
+        where(webhooks[:events].contain(events))
+      end
+
+      def filter(options = {})
+        conditions = options.each_with_object({}) do |(attr, value), hash|
+          hash[webhooks[attr].qualified] = value
         end
 
-        relation do |event_scope|
-          webhooks.where { events.contain(event_scope) }
-        end
+        where(conditions)
       end
     end
   end

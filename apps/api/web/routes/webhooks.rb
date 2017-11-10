@@ -9,8 +9,8 @@ module Api
       end
 
       r.on(:id) do |id|
-        r.get    to: 'resources.webhooks.one',    call_with: [id, r.params]
-        r.delete to: 'resources.webhooks.delete', call_with: [id, r.params]
+        r.get    to: 'resources.webhooks.one',    call_with: [{ id: id }]
+        r.delete to: 'resources.webhooks.delete', call_with: [{ id: id }]
       end
     end
   end

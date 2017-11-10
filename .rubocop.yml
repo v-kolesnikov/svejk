@@ -19,5 +19,8 @@ Style/FileName:
   Exclude:
     - Rakefile
 
+Style/Lambda:
+  Enabled: false
+
 Style/LambdaCall:
   Enabled: false
