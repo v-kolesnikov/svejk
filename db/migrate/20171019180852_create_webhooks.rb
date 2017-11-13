@@ -8,7 +8,7 @@ ROM::SQL.migration do
       column :name, String, null: false
       column :url, String, null: false
       column :secret_key, String
-      column :events, 'text[]'
+      column :events, 'text[]', default: [], null: false
 
       DateTime :created_at
       DateTime :updated_at

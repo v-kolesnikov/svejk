@@ -108,7 +108,7 @@ CREATE TABLE webhooks (
     name text NOT NULL,
     url text NOT NULL,
     secret_key text,
-    events text[],
+    events text[] DEFAULT ARRAY[]::text[] NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
